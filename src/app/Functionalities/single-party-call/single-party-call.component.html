@@ -1,0 +1,40 @@
+<div>
+  <br />
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="md-input-container medium-7">
+      <label for="invitee">{{ "outgoingCall.inviteeLabel" | translate }}</label>
+      <input
+        class="md-input"
+        id="invitee"
+        name="invitee"
+        type="text"
+        ngModel
+        class="medium-5"
+        required
+      />
+    </div>
+
+    <button class="md-button md-button--blue" type="submit" [disabled]="!f.valid">
+      {{ "common.submit" | translate }}
+    </button>
+  </form>
+  <div *ngIf="this.spinnerVisible">
+    <i class="md-spinner md-spinner--36 md-spinner--black"></i>
+  </div>
+  <div class="display">
+    <video class="width" #selfView [muted]="true" autoplay></video>
+    <div class="width">
+      <audio #remoteViewAudio autoplay></audio>
+      <video #remoteViewVideo autoplay></video>
+    </div>
+  </div>
+
+  <button
+  class="md-button md-button--red"
+    type="button"
+    (click)="onHangup()"
+    *ngIf="this.cancel"
+  >
+    {{ "outgoingCall.hangup" | translate }}
+  </button>
+</div>

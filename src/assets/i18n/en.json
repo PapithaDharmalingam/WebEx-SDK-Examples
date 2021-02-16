@@ -1,0 +1,33 @@
+{
+  "featureList": {
+    "example": "Examples",
+    "room": "Create space ,Add members",
+    "calling": "Join Meeting"
+  },
+  "homePage": {
+    "title": "Webex SDK Demo using Angular",
+    "logOut": "Log Out",
+    "logIn": "Login to Play Around"
+  },
+  "createSpace": {
+    "roomName": "Room Name",
+    "MembersLabel": "Want to add members?",
+    "yes": "Yes",
+    "no": "No",
+    "addMembers": "Add member",
+    "addAnotherMember": "+ Add Another Member",
+    "sendMessage": "Want to send a message? (optional)"
+  },
+  "outgoingCall": {
+    "inviteeLabel": "Person ID or Email Address or SIP URI or Room ID",
+    "hangup": "Cancel / Hangup"
+  },
+  "common": {
+    "submit": "Submit"
+  },
+  "about": {
+   "description": "Supported Functionalities",
+   "roomDescription": "- Create a space, Add members and Send message",
+   "callingDescription":"- Join Meeting using roomID, call a person using MailID"
+  }
+}

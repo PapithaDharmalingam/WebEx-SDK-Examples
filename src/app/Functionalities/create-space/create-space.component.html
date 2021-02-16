@@ -1,0 +1,80 @@
+<div>
+  <br />
+  <form [formGroup]="spaceCreation" (ngSubmit)="onSubmit()">
+    <div class="md-input-container medium-4">
+      <label for="roomName">{{ 'createSpace.roomName' | translate }}</label>
+      <input
+        class="md-input"
+        formControlName="roomName"
+        id="roomName"
+        placeholder="Room name"
+      />
+    </div>
+
+    <div class="md-input-container md-radio">
+      <label>{{ 'createSpace.MembersLabel' | translate }}</label>
+      <input
+        type="radio"
+        class="md-input md-radio__input"
+        id="yes"
+        formControlName="addMembers"
+        value="yes"
+      />
+      <label class="md-radio__label" for="yes">{{ 'createSpace.yes' | translate }}</label>
+      <input
+        type="radio"
+        class="md-input md-radio__input"
+        id="no"
+        formControlName="addMembers"
+        value="no"
+      />
+      <label class="md-radio__label" for="no">{{ 'createSpace.no' | translate }}</label>
+    </div>
+
+    <div
+      *ngIf="spaceCreation.value.addMembers == 'yes'"
+      formArrayName="memberMailID"
+    >
+      <h4>{{ 'createSpace.addMembers' | translate }}</h4>
+      <div
+        class="form-group"
+        *ngFor="let memberControl of controls; let i = index"
+      >
+        <input
+          type="text"
+          class="md-input medium-4 md-margin__vertical--s md-margin__right--s"
+          placeholder="Email Id"
+          [formControlName]="i"
+        />
+        <button
+
+          class="md-button md-button--red md-button--circle md-button--small"
+          (click)="onDeleteMember(i)"
+        >
+          X
+        </button>
+      </div>
+
+      <a tabindex="0" (click)="onAddMember()"> {{ 'createSpace.addAnotherMember' | translate }}</a>
+    </div>
+
+    <div class="md-input-container medium-4">
+      <label for="textArea">{{ 'createSpace.sendMessage' | translate }}</label>
+      <textarea
+        class="md-input"
+        type="text"
+        id="sendMessage"
+        formControlName="sendMessage"
+        rows=""
+      ></textarea>
+    </div>
+    <button
+      [disabled]="!this.spaceCreation.valid"
+      class="md-button md-button--blue"
+      type="submit"
+    >
+    {{ 'common.submit' | translate }}
+    </button>
+  </form>
+  <br />
+</div>

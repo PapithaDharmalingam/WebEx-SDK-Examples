@@ -1,0 +1,52 @@
+{
+  "name": "create-room-sdk",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "jest",
+    "test-watch": "jest --watch",
+    "lint": "ng lint",
+    "e2e": "cypress open"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~11.0.3",
+    "@angular/cdk": "^11.0.3",
+    "@angular/common": "~11.0.3",
+    "@angular/compiler": "~11.0.3",
+    "@angular/core": "~11.0.3",
+    "@angular/forms": "~11.0.3",
+    "@angular/platform-browser": "~11.0.3",
+    "@angular/platform-browser-dynamic": "~11.0.3",
+    "@angular/router": "~11.0.3",
+    "@momentum-ui/angular": "^9.4.2",
+    "@ngrx/store": "^10.1.2",
+    "@ngx-translate/core": "^13.0.0",
+    "@ngx-translate/http-loader": "^6.0.0",
+    "lodash-es": "^4.17.20",
+    "moment": "^2.29.1",
+    "rxjs": "^6.6.3",
+    "ts-jest": "^26.5.0",
+    "tslib": "^2.0.0",
+    "webex": "^1.111.0",
+    "zone.js": "~0.10.2"
+  },
+  "devDependencies": {
+    "@angular-builders/custom-webpack": "^11.0.0",
+    "@angular-devkit/build-angular": "~0.1100.3",
+    "@angular/cli": "~11.0.3",
+    "@angular/compiler-cli": "~11.0.3",
+    "@types/jest": "^26.0.20",
+    "codelyzer": "^6.0.0",
+    "cypress": "^6.4.0",
+    "jest": "^26.6.3",
+    "jest-preset-angular": "^8.3.2",
+    "karma-coverage": "~2.0.3",
+    "protractor": "~7.0.0",
+    "ts-node": "~8.3.0",
+    "tslint": "~6.1.0",
+    "typescript": "~4.0.2"
+  }
+}

@@ -1,0 +1,41 @@
+<header class="md-top-bar md-top-bar--dark" role="navigation">
+  <div class="md-top-bar__container">
+    <div class="md-top-bar__brand">
+      <a class="md-brand" href="/">
+        <div class="md-brand__title">{{ "homePage.title" | translate }}</div>
+      </a>
+    </div>
+    <div class="md-top-bar__right">
+      <div class="md-top-bar__user"></div>
+      <div class="md-top-bar__logged-out">
+        <button
+          *ngIf="this.status == 'Log Out'"
+          class="md-button md-button--blue"
+          (click)="onLogout()"
+        >
+          {{ "homePage.logOut" | translate }}
+        </button>
+      </div>
+    </div>
+    <i class="md-top-bar__mobile-menu-button icon icon-list-menu_20"></i>
+  </div>
+</header>
+<div class="row md-margin__left--none md-margin__right--none listHeight">
+  <div class="medium-3 columns md-padding__left--none featureList">
+    <app-sdk-feature-list></app-sdk-feature-list>
+  </div>
+
+  <div class="medium-9 columns">
+    <div *ngIf="this.status == 'Log In'; else routerBlock">
+      <app-about></app-about>
+      <div style="text-align: center">
+        <button class="md-button md-button--blue" (click)="onLogin()">
+          {{ "homePage.logIn" | translate }}
+        </button>
+      </div>
+    </div>
+    <ng-template #routerBlock>
+      <router-outlet></router-outlet>
+    </ng-template>
+  </div>
+</div>
